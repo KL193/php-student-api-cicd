@@ -1,7 +1,8 @@
 <?php
 include 'db.php';
 
-$sql = "SELECT StudentID, FirstName, LastName, Height FROM students";
+// Updated SQL to include PhoneNumber
+$sql = "SELECT StudentID, FirstName, LastName, Height, PhoneNumber FROM students";
 $result = $conn->query($sql);
 
 if (!$result) {
@@ -29,7 +30,7 @@ if (!$result) {
 
         table {
             margin: auto;
-            width: 80%;
+            width: 90%;
             border-collapse: collapse;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             background-color: #fff;
@@ -68,6 +69,7 @@ if (!$result) {
             <th>First Name</th>
             <th>Last Name</th>
             <th>Height</th>
+            <th>Phone Number</th> <!-- New column header -->
         </tr>
         <?php while($row = $result->fetch_assoc()) { ?>
         <tr>
@@ -75,6 +77,7 @@ if (!$result) {
             <td><?= $row['FirstName'] ?></td>
             <td><?= $row['LastName'] ?></td>
             <td><?= $row['Height'] ?> cm</td>
+            <td><?= $row['PhoneNumber'] ?></td> <!-- New column data -->
         </tr>
         <?php } ?>
     </table>
