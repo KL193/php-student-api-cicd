@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $password = ""; // default for WAMP
-$database = "students";
+$database = "student_management";
 
 $conn = new mysqli($host, $user, $password, $database);
 if ($conn->connect_error) {
