@@ -1,7 +1,7 @@
 <?php
 include 'db.php';
 
-$sql = "SELECT * FROM student WHERE LastName='Perera'";
+$sql = "SELECT * FROM students WHERE LastName='Perera'";
 $result = $conn->query($sql);
 
 $students = [];
